@@ -1,10 +1,10 @@
 ## 网络结构
 
-网络结构如下，并没有太多特殊的地方，唯一需要关注的是使用1*1的卷积核进行多通道信息融合，提升了检测质量。该网络根据任务特点，速度与精度的要求可替换为其他网络，如ResNeXT或者作者提出的darknet。![网络结构](Yolo V1(2)-算法分析/image-20200921210613732.png)
+网络结构如下，并没有太多特殊的地方，唯一需要关注的是使用1*1的卷积核进行多通道信息融合，提升了检测质量。该网络根据任务特点，速度与精度的要求可替换为其他网络，如ResNeXT或者作者提出的darknet。![网络结构](https://raw.githubusercontent.com/yifan-chen-2020/Markdown4Zhihu/master/Data/Yolo V1-算法分析/image-20200921210613732.png)
 
 ## 核心思想
 
-![image-20200921210650564](Yolo V1(2)-算法分析/image-20200921210650564.png)
+![image-20200921210650564](https://raw.githubusercontent.com/yifan-chen-2020/Markdown4Zhihu/master/Data/Yolo V1-算法分析/image-20200921210650564.png)
 
 1. 统一图像大小为448 * 448
 2. 输出为  <img src="https://www.zhihu.com/equation?tex=S * S * (B * 5 + C)" alt="S * S * (B * 5 + C)" class="ee_img tr_noresize" eeimg="1"> 
@@ -28,7 +28,7 @@
 
 <img src="https://www.zhihu.com/equation?tex=Loss = λcoord * 坐标预测误差 + \\（对应物体的box \: confidence预测误差  + λnoobj * 不含物体的box \: confidence预测误差）\\ + 物体分类误差" alt="Loss = λcoord * 坐标预测误差 + \\（对应物体的box \: confidence预测误差  + λnoobj * 不含物体的box \: confidence预测误差）\\ + 物体分类误差" class="ee_img tr_noresize" eeimg="1">
 
-![Loss函数分析](Yolo V1(2)-算法分析/Loess函数分析.png)
+![Loss函数分析](https://raw.githubusercontent.com/yifan-chen-2020/Markdown4Zhihu/master/Data/Yolo V1-算法分析/Loess函数分析.png)
 
 ### 解析
 
